@@ -17,10 +17,9 @@
     state: present
 
 - name: Ensure zerotier are installed
-  rpm:
-    name: "{{ item }}"
-    state: present
-  item:
-    - curl 
-    - gnupg
-    - zerotier-one
+  yum:
+    name:
+     - curl 
+     - gnupg
+     - zerotier-one
+  state: present
