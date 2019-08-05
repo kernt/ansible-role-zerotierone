@@ -1,5 +1,4 @@
 ---
-
 - name: Eneble Repo for zerotier RPM like OS
   template:
     src: yum.repos.d/zerotier.repo.j2
@@ -18,9 +17,10 @@
     state: present
 
 - name: Ensure zerotier are installed
-  package:
-    status: installed
-    item:
-      - curl 
-      - gnupg
-      - zerotier-one
+  rpm:
+    name: "{{ item }}"
+    state: installed
+  item:
+    - curl 
+    - gnupg
+    - zerotier-one
