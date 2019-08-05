@@ -16,7 +16,7 @@
     key: "{{ zerotier_gpg_url }}"
     state: present
 
-- name: Ensure zerotier are installed
+- name: Install a list of packages
   yum:
     name:
      - curl 
