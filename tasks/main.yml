@@ -1,7 +1,7 @@
 ---
 
 - include_tasks: docker.yml
-  when: zerotier_install_type['docker']
+  when: zerotier_install_type == "docker"
 
 - include_vars: ansible_facts['os_family'].yml
 
@@ -12,4 +12,4 @@
   when: ansible_os_family == "RedHat"
 
 - include_tasks: configure.yml
-  when: zerotier_install_type['shell']
+  when: zerotier_install_type == "shell"
