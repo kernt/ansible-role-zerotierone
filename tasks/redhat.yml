@@ -1,0 +1,26 @@
+---
+
+- name: Eneble Repo for zerotier RPM like OS
+  template:
+    src: yum.repos.d/zerotier.repo.j2
+    dest: /etc/yum.repos.d/zerotier.repo.j2
+    enablerepo: zerotier
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+  tags:
+    - repos
+    - zerotier
+
+- name: Ensure that Zerotier gpg keys are installed
+  rpm_key:
+    key: "{{ zerotier_gpg_url }}"
+    state: present
+
+- name: Ensure zerotier are installed
+  package:
+    status: installed
+    item:
+      - curl 
+      - gnupg
+      - zerotier-one

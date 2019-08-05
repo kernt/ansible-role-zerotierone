@@ -1,0 +1,54 @@
+---
+# vars file for ansible-role-zerotier
+zerotier_download_base_url: http://download.zerotier.com
+zerotier_gpg_url: https://download.zerotier.com/contact@zerotier.com.gpg
+
+# add some default vars for your role
+zerotier_network_id: ""
+zerotier_network_name: ""
+### Configurations
+# Possible are: docker, source, shell
+zerotier_install_type: ""
+zerotier_member_register_short_hostname: ""
+zerotier_member_ip_assignments: []
+zerotier_member_description: ""
+
+# zerotier_api_accesstoken is to use the api but can be the same in zerotier_api_access_token
+zerotier_api_accesstoken: ""
+# zerotier_api_access_token is own token
+zerotier_api_access_token: ""
+zerotier_api_url: "https://my.zerotier.com"
+#
+zerotier_home_dir: "/var/lib/zerotier-one"
+
+# if use Docker
+zerotier_docker_network_name: "zerotier_net"
+zerotier_docker_Dockerfile: "https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/ext/installfiles/linux/zerotier-containerized/Dockerfile"
+
+# API
+zerotier_api_delegate: "localhost"
+
+
+### ZEROTIER API examples for using
+# Headers = Content-Type: application/json 
+# 
+# General queries 
+ZEROTIER_STATUS: /api/status # GET method
+ZEROTIER_CURRENT_USER: /api/self # GET method
+ZEROTIER_RAND_TOKEN: /api/randomToken # GET method
+ZEROTIER_TERM_CURRENT_SESSION: /api/auth/_logout # POST method
+
+# USER 
+ZEROTIER_RETRIEVE_USER: /api/user/{{userId}} # GET method
+ZEROTIER_UPDATE_USER: /api/user/{{userId}} # POST method
+ZEROTIER_VIEW_USERS: /api/user # GET method
+
+# Network 
+ZEROTIER_RETRIEVE_NETWORK: /api/network/{networkId} # GET method
+ZEROTIER_UPDATE_NETWORK: /api/network/{networkId} # POST method
+ZEROTIER_DELETE_NETWORK: /api/network/{networkId} # DELETE method
+
+# Member 
+ZEROTIER_RETRIEVE_MEMBER:  /api/network/{networkId}/member/{nodeId} # GET method
+ZEROTIER_UPDATE_MEMBER: /api/network/{networkId}/member/{nodeId} # POST method
+ZEROTIER_GET_MEMBERS: /api/network/{networkId}/member # GET method

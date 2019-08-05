@@ -1,0 +1,27 @@
+---
+- name: Configure docker
+  docker_config:
+    docker_host: 
+    name: 
+    state: present
+    ca_cert: ""
+    client_cert: ""
+    client_key: ""
+
+- name: Configure docker networks
+  docker_network:
+    name: ""
+    docker_host: "tcp:"
+    driver: ""
+    state: present
+     
+- name: Docker Container {{ docker_container.container.id.name }}
+  docker_container:
+    docker_host: "tcp:"
+
+- name: 
+  docker_image:
+    docker_host: "tcp://127.0.0.1"
+    build:
+    build_args:
+    state: 
