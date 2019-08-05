@@ -1,15 +1,21 @@
 ---
-- name: Eneble Repo for zerotier RPM like OS
-  template:
-    src: yum.repos.d/zerotier.repo.j2
-    dest: /etc/yum.repos.d/zerotier.repo
-    enablerepo: zerotier
-    owner: root
-    group: root
-    mode: u=rw,g=r,o=r
-  tags:
-    - repos
-    - zerotier
+#- name: Eneble Repo for zerotier RPM like OS
+#  template:
+#    src: yum.repos.d/zerotier.repo.j2
+#    dest: /etc/yum.repos.d/zerotier.repo
+#    enablerepo: zerotier
+#    owner: root
+#    group: root
+#    mode: u=rw,g=r,o=r
+#  tags:
+#    - repos
+#    - zerotier
+
+- name: Add repository zerotier
+  yum_repository:
+    name: zerotier
+    description: ZeroTier, Inc. RPM Release Repository
+    baseurl: http://download.zerotier.com/redhat/el/$releasever
 
 - name: Ensure that Zerotier gpg keys are installed
   rpm_key:
