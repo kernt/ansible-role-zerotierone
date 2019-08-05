@@ -19,7 +19,7 @@
 - name: Ensure zerotier are installed
   rpm:
     name: "{{ item }}"
-    state: installed
+    state: present
   item:
     - curl 
     - gnupg
