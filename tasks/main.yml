@@ -1,18 +1,27 @@
 ---
-
-- include_tasks: docker.yml
-  when: zerotier_install_type == "docker"
+#- include_tasks: docker.yml
+#  when: zerotier_install_type == "docker"
 
 #- name: Load a variable file based on the OS type, or a default if not found. Using free-form to specify the file.
 #  include_vars: "{{ item }}"
 #  with_first_found:
 #    - "{{ ansible_os_family }}.yml"
 
-- include: debian.yml
-  when: ansible_os_family == "Debian"
+#- include_tasks: debian.yml
+#  when: ansible_os_family == "Debian"
 
-- include_tasks: RedHat.yml
+- name: Include RedHat.yml
+  include_tasks: RedHat.yml
   when: ansible_os_family == "RedHat"
 
-- include_tasks: configure.yml
-  when: zerotier_install_type == "shell"
+#- include_tasks: configure.yml
+#  when: zerotier_install_type == "shell"
+- import_tasks: authorize_node.yml
+  when:
+  - zerotier_api_accesstoken | length > 0
+  - ansible_local.zerotier.node_id is defined
+
+- import_tasks: join_network.yml
+  when:
+  - zerotier_network_id is defined
+
