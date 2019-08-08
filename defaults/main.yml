@@ -6,6 +6,7 @@ zerotier_gpg_url: https://download.zerotier.com/contact@zerotier.com.gpg
 # add some default vars for your role
 zerotier_network_id: ""
 zerotier_network_name: ""
+
 ### Configurations
 # Possible are: docker, source, shell
 zerotier_install_type: ""

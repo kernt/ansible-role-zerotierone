@@ -16,6 +16,7 @@
     name: zerotier
     description: ZeroTier, Inc. RPM Release Repository
     baseurl: http://download.zerotier.com/redhat/el/$releasever
+    enabled: yes
 
 - name: Ensure that Zerotier gpg keys are installed
   rpm_key:
