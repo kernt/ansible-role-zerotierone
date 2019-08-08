@@ -10,13 +10,21 @@ zerotier_network_name: ""
 ### Configurations
 # Possible are: docker, source, shell
 zerotier_install_type: ""
+
+
+# Add member systems
 zerotier_member_register_short_hostname: ""
+# set zerotier_member_ip_assignments in your Inventory Example: zerotier_member_ip_assignments='["10.144.177.1", "10.144.177.2"]'
 zerotier_member_ip_assignments: []
 zerotier_member_description: ""
+zerotier_api_delegate: "localhost"
 
 # zerotier_api_accesstoken is to use the api but can be the same in zerotier_api_access_token
-zerotier_api_accesstoken: ""
-# zerotier_api_access_token is own token
+zerotier_api_accesstoken: "{{ zerotier_accesstoken | default() }}"
+
+zerotier_authorize_member: true
+
+# zerotier_api_access_token is yor own token
 zerotier_api_access_token: ""
 zerotier_api_url: "https://my.zerotier.com"
 #
@@ -25,10 +33,6 @@ zerotier_home_dir: "/var/lib/zerotier-one"
 # if use Docker
 zerotier_docker_network_name: "zerotier_net"
 zerotier_docker_Dockerfile: "https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/ext/installfiles/linux/zerotier-containerized/Dockerfile"
-
-# API
-zerotier_api_delegate: "localhost"
-
 
 ### ZEROTIER API examples for using
 # Headers = Content-Type: application/json 

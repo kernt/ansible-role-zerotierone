@@ -34,5 +34,7 @@
   when:
   - not ansible_check_mode
   tags:
-  - configuration
+  - zerotier
+  - network
+  - vpn
   become: false
