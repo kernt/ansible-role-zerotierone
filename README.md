@@ -1,6 +1,6 @@
 # ansible-role-zerotierone
 
-Ansible role for ZerTier One Vpn
+Ansible role for ZeroTier One Vpn
 
 
 Role Variables
