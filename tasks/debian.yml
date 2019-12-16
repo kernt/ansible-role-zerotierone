@@ -1,4 +1,10 @@
 ---
+
+- name: Ensure that Zerotier gpg keys are installed
+  apt_key:
+    url: "{{ zerotier_gpg_url }}"
+    state: present
+
 - name: Add zerotier repo on Debian like OS
   template:
     src: apt/sources-list.d/zerotier.list.j2
@@ -9,3 +15,20 @@
   tags: 
     - repos
     - zerotier
+
+- name: Install in the  list of packages
+  package: 
+    name:
+      - curl 
+      - gnupg
+      - zerotier-one
+    state: present
+  register: zerotier_client
+
+- name: Start zerotier-one service
+  systemd:
+    name: zerotier-one
+    state: started
+    enabled: yes
+  when:
+    - zerotier_client is succeeded

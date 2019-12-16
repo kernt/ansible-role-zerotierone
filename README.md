@@ -2,7 +2,7 @@
 
 Ansible role for ZeroTier One Vpn
 
-
+```s
 Role Variables
 zerotier_network_id
 
@@ -39,3 +39,21 @@ zerotier_api_delegate
 Type: string
 Default value: localhost
 Description: Option to delegate tasks for Zerotier API calls. This is usefull in a situation where API calls can only be made from a whitelisted management server, for example.
+```
+
+## Use
+
+For your nodes you have to set a value for the following:
+
+```
+# add some default vars for your role
+zerotier_network_id: ""
+zerotier_network_name: ""
+
+### Configurations
+# Possible are: docker, source, shell
+zerotier_install_type: ""
+
+```
+
+if not you will get an error fom Ansible.

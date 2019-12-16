@@ -7,15 +7,13 @@
 #  with_first_found:
 #    - "{{ ansible_os_family }}.yml"
 
-#- include_tasks: debian.yml
-#  when: ansible_os_family == "Debian"
+- include_tasks: debian.yml
+  when: ansible_os_family == "Debian"
 
 - name: Include RedHat.yml
   include_tasks: RedHat.yml
   when: ansible_os_family == "RedHat"
 
-#- include_tasks: configure.yml
-#  when: zerotier_install_type == "shell"
 - import_tasks: authorize_node.yml
   when:
   - zerotier_api_accesstoken | length > 0
