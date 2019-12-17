@@ -17,17 +17,14 @@
     - zerotier
 
 - name: Install in the  list of packages
-  package: 
+  apt: 
     name:
       - curl 
       - gnupg
       - zerotier-one
     state: present
+    update_cache: yes
   register: zerotier_client
-
-- name: Update apt
-  apt:
-    update: yes
 
 - name: Start zerotier-one service
   systemd:
