@@ -5,7 +5,7 @@
     url: "{{ zerotier_gpg_url }}"
     state: present
 
-- name: Add zerotier repo on Debian like OS
+- name: Add repo on Debian
   template:
     src: apt/sources.list.d/zerotier.list.j2
     dest: /etc/apt/sources.list.d/zerotier.list
@@ -16,7 +16,7 @@
     - repos
     - zerotier
 
-- name: Install in the  list of packages
+- name: Install in the list of packages
   apt: 
     name:
       - curl 
