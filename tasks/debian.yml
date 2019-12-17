@@ -7,7 +7,7 @@
 
 - name: Add zerotier repo on Debian like OS
   template:
-    src: /apt/sources-list.d/zerotier.list.j2
+    src: apt/sources.list.d/zerotier.list.j2
     dest: /etc/apt/sources-list.d/zerotier.list
     owner: root
     group: root
