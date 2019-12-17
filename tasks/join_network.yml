@@ -1,6 +1,5 @@
 ---
 
-zerotier_network_id: "8850338390eb4e96"
 
 - name: Join ZeroTier network
   command: /usr/sbin/zerotier-cli join "{{ zerotier_network_id }}"
