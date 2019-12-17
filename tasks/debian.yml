@@ -25,6 +25,10 @@
     state: present
   register: zerotier_client
 
+- name: Update apt
+  apt:
+    update: yes
+
 - name: Start zerotier-one service
   systemd:
     name: zerotier-one
