@@ -1,9 +1,11 @@
 ---
 
+zerotier_network_id: "8850338390eb4e96"
+
 - name: Join ZeroTier network
   command: /usr/sbin/zerotier-cli join "{{ zerotier_network_id }}"
   args:
-    creates: /var/lib/zerotier-one/networks.d/"{{ zerotier_network_id }}".conf
+    creates: /var/lib/zerotier-one/networks.d/"{{ zerotier_network_id }}".local.conf
   tags:
     - zerotier
     - network
