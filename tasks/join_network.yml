@@ -6,4 +6,4 @@
   tags:
     - zerotier
     - network
-  notify: restart_zerotier-one
+  notify: enable_zerotier-one
