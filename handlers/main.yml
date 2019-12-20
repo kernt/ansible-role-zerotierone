@@ -10,7 +10,7 @@
     name: zerotier-one
     status: stopped
 
-- name: restart zerotier-one
+- name: restart zerotier-one service
   service: 
     name: zerotier-one
     status: restarted
