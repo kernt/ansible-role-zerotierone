@@ -4,18 +4,19 @@
   service: 
     name: zerotier-one 
     status: started
+    enabled: yes
 
 - name: stop zerotier-one
   service: 
     name: zerotier-one
     status: stopped
 
-- name: restart zerotier-one service
+- name: restart_zerotier-one
   service: 
     name: zerotier-one
     status: restarted
 
-- name: enable zerotier-one
+- name: enable_zerotier-one
   service: 
     name: zerotier-one
     enabled: yes
