@@ -1,21 +1,21 @@
 ---
 # handlers file for ansible-role-zerotier
 - name: start zerotier-one
-  systemd: 
+  service: 
     name: zerotier-one 
     status: started
 
 - name: stop zerotier-one
-  systemd: 
+  service: 
     name: zerotier-one
     status: stopped
 
 - name: restart zerotier-one
-  systemd: 
+  service: 
     name: zerotier-one
     status: restarted
 
 - name: enable zerotier-one
-  systemd: 
+  service: 
     name: zerotier-one
     enabled: yes
