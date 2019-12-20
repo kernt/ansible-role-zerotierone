@@ -7,20 +7,21 @@
 #  with_first_found:
 #    - "{{ ansible_os_family }}.yml"
 
-- include_tasks: debian.yml
+- name: Includes debian.yml
+  include_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
 - name: Include RedHat.yml
   include_tasks: RedHat.yml
   when: ansible_os_family == "RedHat"
 
-- Name: Autorize Nodes 
+- name: Authorize Nodes 
   import_tasks: authorize_node.yml
   when:
     - zerotier_api_accesstoken | length > 0
     - ansible_local.zerotier.node_id is defined
 
-- Name: Join Nodes into Network
+- name: Join Nodes into Network
   import_tasks: join_network.yml
   when:
     - zerotier_network_id is defined
