@@ -57,3 +57,5 @@ zerotier_install_type: ""
 ```
 
 if not you will get an error fom Ansible.
+
+> Repositoy doesn't seem to work. I will add a bash command very soon.
