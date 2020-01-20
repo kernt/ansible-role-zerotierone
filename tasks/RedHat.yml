@@ -1,7 +1,7 @@
 ---
 - name: Eneble Repo for zerotier RPM like OS
   template:
-    src: yum.repos.d/zerotier.repo.j2
+    src: /yum.repos.d/zerotier.repo.j2
     dest: /etc/yum.repos.d/zerotier.repo
     owner: root
     group: root
