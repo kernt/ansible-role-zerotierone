@@ -43,16 +43,16 @@ ZEROTIER_RAND_TOKEN: /api/randomToken # GET method
 ZEROTIER_TERM_CURRENT_SESSION: /api/auth/_logout # POST method
 
 # USER 
-ZEROTIER_RETRIEVE_USER: /api/user/{{userId}} # GET method
-ZEROTIER_UPDATE_USER: /api/user/{{userId}} # POST method
+ZEROTIER_RETRIEVE_USER: /api/user/"{{ userId }}" # GET method
+ZEROTIER_UPDATE_USER: /api/user/"{{ userId }}" # POST method
 ZEROTIER_VIEW_USERS: /api/user # GET method
 
 # Network 
-ZEROTIER_RETRIEVE_NETWORK: /api/network/{networkId} # GET method
-ZEROTIER_UPDATE_NETWORK: /api/network/{networkId} # POST method
-ZEROTIER_DELETE_NETWORK: /api/network/{networkId} # DELETE method
+ZEROTIER_RETRIEVE_NETWORK: /api/network/"{{ networkId }}" # GET method
+ZEROTIER_UPDATE_NETWORK: /api/network/"{{ networkId }}" # POST method
+ZEROTIER_DELETE_NETWORK: /api/network/"{{ networkId }}" # DELETE method
 
 # Member 
-ZEROTIER_RETRIEVE_MEMBER:  /api/network/{networkId}/member/{nodeId} # GET method
-ZEROTIER_UPDATE_MEMBER: /api/network/{networkId}/member/{nodeId} # POST method
-ZEROTIER_GET_MEMBERS: /api/network/{networkId}/member # GET method
+ZEROTIER_RETRIEVE_MEMBER:  /api/network/"{{ networkId }}"/member/"{{ nodeId }}" # GET method
+ZEROTIER_UPDATE_MEMBER: /api/network/"{{ networkId }}"/member/"{{ nodeId }}" # POST method
+ZEROTIER_GET_MEMBERS: /api/network/"{{ networkId }}"/member # GET method

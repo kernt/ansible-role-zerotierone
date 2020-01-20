@@ -27,7 +27,8 @@
 
 - name: Install in the  list of packages
   package: 
-    name:
+    name: "{{ item }}"
+    with_items:
       - curl 
       - gnupg
       - zerotier-one

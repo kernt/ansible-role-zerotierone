@@ -17,8 +17,9 @@
     - zerotier
 
 - name: Install in the list of packages
-  apt: 
-    name:
+  apt:
+    name: "{{ item }}"
+    with_items:
       - curl 
       - gnupg
       - zerotier-one
