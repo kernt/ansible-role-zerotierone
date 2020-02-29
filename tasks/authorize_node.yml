@@ -30,6 +30,7 @@
       body_format: json
       register: conf_apiresult
     delegate_to: "{{ zerotier_api_delegate }}"
+
   when:
   - not ansible_check_mode
   tags:

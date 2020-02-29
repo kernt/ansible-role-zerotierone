@@ -1,12 +1,4 @@
 ---
-#- include_tasks: docker.yml
-#  when: zerotier_install_type == "docker"
-
-#- name: Load a variable file based on the OS type, or a default if not found. Using free-form to specify the file.
-#  include_vars: "{{ item }}"
-#  with_first_found:
-#    - "{{ ansible_os_family }}.yml"
-
 - name: Includes debian.yml
   include_tasks: debian.yml
   when: ansible_os_family == "Debian"
@@ -14,6 +6,13 @@
 - name: Include RedHat.yml
   include_tasks: RedHat.yml
   when: ansible_os_family == "RedHat"
+
+- block:
+  - name: Update ansible_local facts
+    script: set_facts.sh
+
+  - name: Re-gather facts
+    setup: ~
 
 - name: Authorize Nodes 
   import_tasks: authorize_node.yml
@@ -30,4 +29,3 @@
 #  command: |
 #    curl -s 'https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg' | gpg --import && \
 #    if z=$(curl -s 'https://install.zerotier.com/' | gpg); then echo "$z" | sudo bash; fi
-
