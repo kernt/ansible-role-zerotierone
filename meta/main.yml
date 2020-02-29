@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  author: Roman Demachkovych, Pawel Krupa
+  author: Tobias Kern
   description: Zerotier VPN configuration and management
   license: MIT
   company: oshsl

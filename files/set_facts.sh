@@ -38,6 +38,5 @@ fi
 
 file_content > $FACT_FILE
 
-
 # TO-DO
 # Handle different states than "OK". Other statuses can mess up positions.

@@ -11,12 +11,12 @@
     name: zerotier-one
     state: stopped
 
-- name: restart_zerotier-one
+- name: restart zerotier-one
   service: 
     name: zerotier-one
     state: restarted
 
-- name: enable_zerotier-one
+- name: enable zerotier-one
   service: 
     name: zerotier-one
     enabled: yes
