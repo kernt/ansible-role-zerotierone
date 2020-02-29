@@ -13,6 +13,7 @@ zerotier_install_type: ""
 
 # Add member systems
 zerotier_member_register_short_hostname: ""
+
 # set zerotier_member_ip_assignments in your Inventory Example: zerotier_member_ip_assignments='["10.144.177.1", "10.144.177.2"]'
 zerotier_member_ip_assignments: []
 zerotier_member_description: ""
